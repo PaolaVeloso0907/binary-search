@@ -12,12 +12,30 @@
 
 <body>
     <div class="main">
-        <div class="content">
+        <div id="content-before">
             <h1>Aprendendo um novo algoritmo <br><strong>BINARY SEARCH</strong></h1>
             <p>Clique no botão para começar!</p>
-            <button class="btn-start">COMEÇAR</button>
+            <button class="btn-start" onclick="comecar()">COMEÇAR</button>
+        </div>
+
+        <div id="content-after">
+            <div  class="all-result">
+
+                <p class="result">Série de números:
+                <p class="result-num" id="exibir">
+                </p>
+                </p>
+
+                <div class="btn-after">
+                    <button class="btn-start" onclick="gerarNum()">Gerar Nova Sequência</button>
+                    <button class="btn-start" onclick="ordenarNum()">Ordenar Números</button>
+                    <button class="btn-start" onclick="buscarNum()">Buscar Posição</button>
+                </div>
+            </div>
+
         </div>
     </div>
+
 
 </body>
 
