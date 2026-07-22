@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,34 @@
 
     <title>Binary Search And A Little More | Home</title>
 </head>
-<body>
 
-    <h1>Aprendendo um novo algoritmo <strong>Binary Search</strong></h1>
-    <p>Clique no botão para começar!</p>
-    <button>COMEÇAR</button>
+<body>
+    <div class="main">
+        <div id="content-before">
+            <h1>Aprendendo um novo algoritmo <br><strong>BINARY SEARCH</strong></h1>
+            <p>Clique no botão para começar!</p>
+            <button class="btn-start" onclick="comecar()">COMEÇAR</button>
+        </div>
+
+        <div id="content-after">
+            <div  class="all-result">
+
+                <p class="result">Série de números:
+                <p class="result-num" id="exibir">
+                </p>
+                </p>
+
+                <div class="btn-after">
+                    <button class="btn-start" onclick="gerarNum()">Gerar Nova Sequência</button>
+                    <button class="btn-start" onclick="ordenarNum()">Ordenar Números</button>
+                    <button class="btn-start" onclick="buscarNum()">Buscar Posição</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 </body>
+
 </html>
