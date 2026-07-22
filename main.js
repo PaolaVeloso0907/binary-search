@@ -10,10 +10,9 @@ function comecar() {
   gerarNum();
 }
 
-const listaDeNum = [];
 
 function gerarNum() {
-  listaDeNum.length = 0; // se não limpar alista, entra em um loop infinito pois fica caindo no "else"(i--)
+  const listaDeNum = [];
 
   for (let i = 0; i < 10; i++) {
     let numAleatorio = Math.floor(Math.random() * 10 + 1);
