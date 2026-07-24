@@ -33,23 +33,26 @@ function ordenarNum() {
   // i -> coloca na posicao atual o valor q foi achado pelo j (organiza)
   // j -> corre e procura o menor valor (procura)
 
+  // [2, 6, 1, 5]
+
   // utilizo os "for" para poder achar o lugar de cada coisinha, mas ainda não organizei
   for (let i = 0; i < listaDeNum.length - 1; i++) {
     // verifica a posicao até o penultimo termo
     let menorIndice = i;
 
     for (let j = i + 1; j < listaDeNum.length; j++) {
-      // verifica o menor numero contido na posicao
-      if (listaDeNum[j] < listaDeNum[i]) {
-        menorIndice = listaDeNum[j];
+      // verifica o menor numero contido a partir daquela posicao
+      if (listaDeNum[j] < listaDeNum[menorIndice]) {
+        // compara na posição de J e o menorIndice, pq o i é o valor q se altera e o menorIndice é a posição do menor valor, q pode ou nao se alterar.
+        menorIndice = j;
       }
     }
 
     // agora com tudo organizado, a gente já pode fazer as troca de posições
     // precisamos de uma variavel auxiliar para poder armazenar os valores corretamente e dps trocar o q for necessario
-    let caixinhaEspecial = listaDeNum[i] // guarda o valor atual pra n perder ele
-    listaDeNum[i] = listaDeNum[menorIndice] // coloca o menor valor na posicao atual
-    listaDeNum[menorIndice] = caixinhaEspecial // coloca o valor anterior na posição q o menor saiu e deixou vago
+    let caixinhaEspecial = listaDeNum[i]; // guarda o valor atual pra n perder ele
+    listaDeNum[i] = listaDeNum[menorIndice]; // coloca o menor valor na posicao atual
+    listaDeNum[menorIndice] = caixinhaEspecial; // coloca o valor anterior na posição q o menor saiu e deixou vago
 
     // o nome dessa troca é "swap"
   }
@@ -58,4 +61,17 @@ function ordenarNum() {
   return;
 }
 
-function buscarNum() {}
+function buscar() {
+  document.getElementById("content-after").style.display = "none";
+  document.getElementById("content-search").style.display = "block";
+
+  buscarPosicao();
+}
+
+function buscarPosicao() {
+  document.getElementById("content-after").style.display = "none";
+  document.getElementById("content-search").style.display = "block";
+
+
+}
+
