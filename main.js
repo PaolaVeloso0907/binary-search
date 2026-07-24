@@ -1,7 +1,7 @@
 // TAREFAS PARA ESSA LIÇÃO:
 // 1. Gerar série de números aleatórios e exibir na tela (Math.random)✅
 // 2. Clicar em um botão e ordenar os números. (logica da amarelinha (selection sort))✅
-// 3. Digitar um número e buscar a posição dele entre os numeros. (Binary Search)
+// 3. Digitar um número e buscar a quantidade de tentativas para achar ele no array. (Binary Search)✅
 
 function comecar() {
   document.getElementById("content-before").style.display = "none";
@@ -64,14 +64,40 @@ function ordenarNum() {
 function buscar() {
   document.getElementById("content-after").style.display = "none";
   document.getElementById("content-search").style.display = "block";
-
-  buscarPosicao();
 }
 
 function buscarPosicao() {
-  document.getElementById("content-after").style.display = "none";
-  document.getElementById("content-search").style.display = "block";
+  ordenarNum();
 
+  const numeroDigitado = ipt_number.value;
+  let inicio = listaDeNum[0];
+  let fim = listaDeNum[listaDeNum.length - 1];
 
+  document.getElementById("content-search").style.display = "none";
+  document.getElementById("content-resultSearch").style.display = "block";
+
+  for (let i = 1; fim >= inicio; i++) {
+    let meio = Math.floor((inicio + fim) / 2);
+    console.log(`O íniciio é ${inicio}, o fim é ${fim} e o meio é ${meio}`);
+
+    if (numeroDigitado == meio) {
+      console.log(`meio`, numeroDigitado, meio);
+      return (exibirPosicao.innerHTML = `Encontrado em ${i} tentativas`);
+    }
+
+    if (numeroDigitado < meio) {
+      fim = meio - 1;
+      console.log(`${numeroDigitado} é menor que ${meio}? SIM`);
+    } else if (numeroDigitado > meio) {
+      inicio = meio + 1;
+      console.log(`${numeroDigitado} é maior que ${meio}? SIM`);
+    }
+  }
+ 
+  return;
 }
 
+function voltar() {
+  document.getElementById("content-resultSearch").style.display = "none";
+  document.getElementById("content-after").style.display = "block";
+}
